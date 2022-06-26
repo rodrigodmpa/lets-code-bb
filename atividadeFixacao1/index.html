@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade de fixação 1</title>
+  </head>
+  <body>
+    <div>
+      <section>
+        <h1>Calculadora de média de notas bimestrais</h1>
+        <form onsubmit="calcularMedia(event)" id="form1">
+          <div style="display: flex; flex-direction: row">
+            <div style="display: flex; flex-direction: column">
+              <label for="nota1">Nota 1</label>
+              <input id="nota1" type="text" placeholder="Nota 1" />
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <label for="nota2">Nota 2</label>
+              <input id="nota2" type="text" placeholder="Nota 2" />
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <label for="nota3">Nota 3</label>
+              <input id="nota3" type="text" placeholder="Nota 3" />
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <label for="nota4">Nota 4</label>
+              <input id="nota4" type="text" placeholder="Nota 4" />
+            </div>
+
+            <button type="submit">Calcular média</button>
+          </div>
+        </form>
+        <div id="mediaNotas"></div>
+      </section>
+      <section>
+        <h1>Calculadora de área do círculo</h1>
+        <form onsubmit="calcularAreaCirculo(event)" id="form2">
+          <div style="display: flex; flex-direction: row">
+            <div style="display: flex; flex-direction: column">
+              <label for="raio">Raio</label>
+              <input id="raio" type="text" placeholder="Raio" />
+            </div>
+
+            <button type="submit">Calcular área</button>
+          </div>
+        </form>
+        <div id="areaCirculo"></div>
+      </section>
+      <section>
+        <h1>Conversor de temperatura de Fahrenheit para Celsius</h1>
+        <form onsubmit="calcularTemperatura(event)" id="form3">
+          <div style="display: flex; flex-direction: row">
+            <div style="display: flex; flex-direction: column">
+              <label for="temperatura">Temperatura em Fahrenheit</label>
+              <input id="temperatura" type="text" placeholder="Temperatura" />
+            </div>
+
+            <button type="submit">Calcular temperatura em Celsius</button>
+          </div>
+        </form>
+        <div id="celsius"></div>
+      </section>
+      <section>
+        <h1>Calculadora de área e perímetro de retângulo</h1>
+        <form onsubmit="calcularAreaEPerimetro(event)" id="form4">
+          <div style="display: flex; flex-direction: row">
+            <div style="display: flex; flex-direction: column">
+              <label for="comprimentoSala">Comprimento da sala: </label>
+              <input
+                id="comprimentoSala"
+                type="text"
+                placeholder="Comprimento"
+              />
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <label for="larguraSala">Largura da Sala: </label>
+              <input id="larguraSala" type="text" placeholder="Largura" />
+            </div>
+
+            <button type="submit">Calcular área e perímetro da sala</button>
+          </div>
+        </form>
+        <div id="areaEPerimetro"></div>
+      </section>
+      <section>
+        <h1>
+          Calculadora de quantidade de caixas de azulejos para chão de cozinha
+        </h1>
+        <form onsubmit="calcularCozinha(event)" id="form5">
+          <div style="display: flex; flex-direction: row">
+            <div style="display: flex; flex-direction: column">
+              <label for="comprimentoCozinha">Comprimento da cozinha: </label>
+              <input
+                id="comprimentoCozinha"
+                type="text"
+                placeholder="Comprimento"
+              />
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <label for="larguraCozinha">Largura da cozinha: </label>
+              <input id="larguraCozinha" type="text" placeholder="Largura" />
+            </div>
+
+            <button type="submit">
+              Calcular quantidade de caixas de azulejos
+            </button>
+          </div>
+        </form>
+        <div id="resultadoCozinha"></div>
+      </section>
+    </div>
+
+    <script type="text/javascript">
+      function calcularMedia(event) {
+        event.preventDefault();
+        const nota1 = +document.getElementById("nota1").value;
+        const nota2 = +document.getElementById("nota2").value;
+        const nota3 = +document.getElementById("nota3").value;
+        const nota4 = +document.getElementById("nota4").value;
+
+        const result = (document.getElementById("mediaNotas").innerHTML =
+          "A média das notas é " + (nota1 + nota2 + nota3 + nota4) / 4);
+      }
+
+      function calcularAreaCirculo(event) {
+        event.preventDefault();
+        const raio = +document.getElementById("raio").value;
+        const result = (document.getElementById("areaCirculo").innerHTML =
+          "A área é " + Math.PI * raio ** 2);
+      }
+
+      function calcularTemperatura(event) {
+        event.preventDefault();
+        const temperatura = +document.getElementById("temperatura").value;
+        const result = (document.getElementById("celsius").innerHTML =
+          "A temperatura em Celsius é " + 5 * ((temperatura - 32) / 9));
+      }
+
+      function calcularAreaEPerimetro(event) {
+        event.preventDefault();
+        const comprimentoSala =
+          +document.getElementById("comprimentoSala").value;
+        const larguraSala = +document.getElementById("larguraSala").value;
+
+        const area = comprimentoSala * larguraSala;
+        const perimetro = 2 * comprimentoSala + 2 * larguraSala;
+        const result = (document.getElementById("areaEPerimetro").innerHTML =
+          "A área da sala é " + area + " e o perímetro é: " + perimetro);
+      }
+
+      function calcularCozinha(event) {
+        event.preventDefault();
+        const comprimentoCozinha =
+          +document.getElementById("comprimentoCozinha").value;
+        const larguraCozinha = +document.getElementById("larguraCozinha").value;
+
+        const area = comprimentoCozinha * larguraCozinha;
+        const qntCaixas = area / 2.5;
+        const result = (document.getElementById("resultadoCozinha").innerHTML =
+          "Será preciso " +
+          qntCaixas +
+          " caixa(s) de azulejos para cobrir o chão de sua cozinha!");
+      }
+    </script>
+  </body>
+</html>
