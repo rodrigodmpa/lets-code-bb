@@ -1,0 +1,122 @@
+body {
+    background-color: bisque;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: blueviolet;
+    height: 80px;
+    margin-bottom: 40px;
+    align-items: center;
+    padding-left: 30px;
+}
+
+header>div {
+    font-size: 30px;
+    color: white;
+}
+
+.container {
+    margin: auto;
+    width: 50%;
+}
+
+.row {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: blueviolet;
+    border-radius: 12px;
+    margin: 8px;
+    padding: 8px;
+}
+
+.card>h1 {
+    color: white;
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 4px 12px
+}
+
+.input-container>label {
+    font-size: 14px;
+    color: white;
+}
+
+.input-container>input {
+    height: 24px;
+    color: gray;
+}
+
+.form-container {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    width: 80%;
+}
+
+button.submit {
+    background-color: inherit;
+    border: 1px solid white;
+    color: white;
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    align-self: center;
+    margin-top: 12px;
+}
+
+button.submit:hover {
+    background-color: white;
+    border: 0;
+    color: blueviolet;
+    transition: background-color 0.2s linear;
+}
+
+
+div.result {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px;
+}
+
+table.espelho {
+    width: 100%;
+    display: none;
+    text-align: center;
+    border: 1px solid white
+}
+
+tr>td:first-child,
+tr>th:first-child {
+    text-align: left;
+}
+
+.footer {
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    color: white;
+    font-size: 12px;
+    margin-top: 24px;
+}

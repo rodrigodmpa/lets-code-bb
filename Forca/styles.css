@@ -1,0 +1,50 @@
+body {
+    background-color: bisque;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+
+.word-container {
+    display: flex;
+}
+
+.letter-container {
+    width: 50px;
+    margin-left: 8px;
+    border-bottom: 3px solid black;
+    text-align: center;
+    font-size: 50px;
+    font-family: Montserrat;
+}
+
+.input-container {
+    margin: 4px 12px
+}
+
+.input-container>label {
+    font-size: 20px;
+    color: black;
+}
+
+.input-container>input {
+    height: 24px;
+    width: 24px;
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.input-container>input:focus,
+.input-container>input:focus {
+    outline: none;
+}

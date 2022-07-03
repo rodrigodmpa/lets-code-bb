@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <title>Lets Code - Exercício 2</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            Lets Code - Exercício 2
+        </div>
+
+    </header>
+    <div class="container">
+
+        <section class="card">
+            <h1>Calculadora de média ponderada</h1>
+            <form onsubmit="mostra_media_ponderada(event)" id="form1">
+                <div class="form-container">
+                    <div>
+                        <div class="input-container">
+                            <label for="aluno1_matricula">Matrícula Aluno 1</label>
+                            <input id="aluno1_matricula" type="text" required placeholder="Matrícula" />
+                        </div>
+                        <div class="row">
+                            <div class="input-container">
+                                <label for="aluno1_nota1">Nota 1</label>
+                                <input id="aluno1_nota1" type="number" step="0.1" min="0" max="10" required
+                                    placeholder="Nota 1" />
+                            </div>
+                            <div class="input-container">
+                                <label for="aluno1_peso1">Peso 1</label>
+                                <input id="aluno1_peso1" type="number" step="0.1" min="0" max="10" required
+                                    placeholder="Peso 1" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-container">
+                                <label for="aluno1_nota2">Nota 2</label>
+                                <input id="aluno1_nota2" type="number" step="0.1" min="0" max="10" required
+                                    placeholder="Nota 2" />
+                            </div>
+                            <div class="input-container">
+                                <label for="aluno1_peso2">Peso 2</label>
+                                <input id="aluno1_peso2" type="number" step="0.1" min="0" max="10" required
+                                    placeholder="Peso 2" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <hr style="color: white; width: 100%; margin-top: 22px;" />
+                    <div>
+                        <div class="input-container">
+                            <label for="aluno2_matricula">Matrícula Aluno 2</label>
+                            <input id="aluno2_matricula" type="text" required placeholder="Matrícula" />
+                        </div>
+                        <div class="row">
+                            <div class="input-container">
+                                <label for="aluno2_nota1">Nota 1</label>
+                                <input id="aluno2_nota1" type="number" step="0.1" min="0" max="10" required
+                                    placeholder="Nota 1" />
+                            </div>
+                            <div class="input-container">
+                                <label for="aluno2_peso1">Peso 1</label>
+                                <input id="aluno2_peso1" type="number" step="0.1" min="0" max="10" required
+                                    placeholder="Peso 1" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-container">
+                                <label for="aluno2_nota2">Nota 2</label>
+                                <input id="aluno2_nota2" type="number" step="0.1" min="0" max="10" required
+                                    placeholder="Nota 2" />
+                            </div>
+                            <div class="input-container">
+                                <label for="aluno2_peso2">Peso 2</label>
+                                <input id="aluno2_peso2" type="number" step="0.1" min="0" max="10" required
+                                    placeholder="Peso 2" />
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <button class="submit" type="submit">Calcular</button>
+
+                </div>
+
+            </form>
+            <div class="result" id="media_ponderada"></div>
+        </section>
+        <section class="card">
+            <h1>Calculadora de salário líquido</h1>
+            <form onsubmit="mostra_salario_liquido(event)" id="form2">
+                <div class="form-container">
+                    <div class="input-container">
+                        <label for="salario_bruto">Salário Bruto</label>
+                        <input id="salario_bruto" type="number" step="0.01" min="0" required
+                            placeholder="Salário Bruto" />
+                    </div>
+
+
+                    <button class="submit" type="submit">Calcular</button>
+                </div>
+            </form>
+            <div class="result" id="salario_liquido"></div>
+        </section>
+        <section class="card">
+            <h1>Aprovação de aluno</h1>
+            <form onsubmit="mostra_aprovacao(event)" id="form3">
+                <div class="form-container">
+                    <div class="input-container">
+                        <label for="nota_parcial1">Nota 1</label>
+                        <input id="nota_parcial1" required type="number" step="0.1" min="0" max="10"
+                            placeholder="Nota 1" />
+                    </div>
+                    <div class="input-container">
+                        <label for="nota_parcial2">Nota 2</label>
+                        <input id="nota_parcial2" required type="number" step="0.1" min="0" max="10"
+                            placeholder="Nota 2" />
+                    </div>
+
+
+                    <button class="submit" type="submit">Calcular</button>
+                </div>
+            </form>
+            <div class="result" id="media_aluno"></div>
+        </section>
+        <section class="card">
+            <h1>Calcular novo salário Tabajara</h1>
+            <form onsubmit="mostra_novo_salario(event)" id="form4">
+                <div class="form-container">
+                    <div class="input-container">
+                        <label for="salario_antigo">Salário Antigo</label>
+                        <input id="salario_antigo" required type="number" step="0.1" min="0"
+                            placeholder="Salário Antigo" />
+                    </div>
+
+
+                    <button class="submit" type="submit">Calcular</button>
+                </div>
+            </form>
+            <div class="result" id="salario_novo"></div>
+        </section>
+        <section class="card">
+            <h1>Calcular folha de pagamento</h1>
+            <form onsubmit="mostra_folha(event)" id="form5">
+                <div class="form-container">
+                    <div class="input-container">
+                        <label for="horas_trabalhadas">Horas Trabalhadas</label>
+                        <input id="horas_trabalhadas" required type="number" step="0.1" min="0"
+                            placeholder="Horas Trabalhadas" />
+                    </div>
+                    <div class="input-container">
+                        <label for="valor_hora">Valor da hora</label>
+                        <input id="valor_hora" required type="number" step="0.01" min="0" placeholder="Valor da hora" />
+                    </div>
+
+
+                    <button class="submit" type="submit">Calcular</button>
+                </div>
+            </form>
+            <div class="result" id="salario_folha">
+                <table class="espelho" id="espelho">
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Proventos</th>
+                        <th>Descontos</th>
+                        <th>Outros</th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>Salário Bruto</td>
+                            <td id="bruto">1000</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Imposto de renda</td>
+                            <td>-</td>
+                            <td id="ir"></td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Sindicato</td>
+                            <td>-</td>
+                            <td id="sindicato"></td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>FGTS</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td id="fgts"></td>
+                        </tr>
+                        <tr>
+                            <td>Líquido</td>
+                            <td id="liquido"></td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">Rodrigo Demetrio Palma</footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
