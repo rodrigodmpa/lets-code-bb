@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <title>Jogo da Forca</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <header>
+      <div>Lets Code - Jogo da forca</div>
+    </header>
 
     <section>
-        <div class="container">
-            <div class="word-container"></div>
-            <form class="input-container" onsubmit="tentar(event)">
-                <label for="letter">Qual a letra? </label>
-                <input id="letter" type="text" required />
-                <button type="submit">Tentar</button>
-            </form>
+      <div class="container">
+        <div class="life-container">
+          <h4>Vidas:</h4>
         </div>
+        <div class="word-container"></div>
+        <form class="input-container" onsubmit="tentar(event)">
+          <div>
+            <label for="letter">Digite uma letra:</label>
+            <input id="letter" type="text" maxlength="1" required />
+          </div>
+          <button class="submit" type="submit">Tentar</button>
+        </form>
+        <div class="success-container">Parabéns, você venceu!</div>
+        <div class="used-letters-container">
+          <h4>Letras já usadas:</h4>
+          <div class="used-letters"></div>
+        </div>
+      </div>
     </section>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
